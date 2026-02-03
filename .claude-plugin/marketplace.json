@@ -1,0 +1,67 @@
+{
+  "schema_version": "v1",
+  "plugin_id": "bigdata-learning-guide",
+  "plugin_name": "大数据学习指南",
+  "plugin_description": "专为大数据学习者打造的Claude插件，提供大数据核心知识点速查（覆盖Hadoop/Spark/Flink等技术栈）。",
+  "developer": {
+    "name": "你的名称/团队名",
+    "contact_email": "your-email@example.com",
+    "website": "https://github.com/whq123-blog/coze_skills"
+  },
+  "metadata": {
+    "category": "education",
+    "tags": ["大数据", "Hadoop", "Spark", "学习指南"],
+    "version": "1.0.0",
+    "release_date": "2024-05-20",
+    "compatibility": {
+      "claude_versions": ["claude-3-opus", "claude-3-sonnet", "claude-3-haiku"],
+      "languages": ["zh-CN"]
+    },
+    "media": {
+      "icon_url": "https://your-domain.com/icons/bigdata-plugin.png"
+    }
+  },
+  "capabilities": {
+    "functions": [
+      {
+        "name": "query_bigdata_knowledge",
+        "description": "查询大数据核心知识点（支持Hadoop/Spark/Flink等技术栈）",
+        "parameters": [
+          {
+            "name": "tech_stack",
+            "type": "string",
+            "required": true,
+            "description": "技术栈名称，如Hadoop、Spark、Flink",
+            "enum": ["Hadoop", "Spark", "Flink", "Hive", "Kafka"]
+          },
+          {
+            "name": "knowledge_type",
+            "type": "string",
+            "required": false,
+            "description": "知识点类型，可选：核心概念、架构原理、常用命令、调优技巧",
+            "default": "核心概念"
+          }
+        ]
+      }
+    ],
+    "api_spec": {},
+    "permissions": {
+      "required_scopes": [],
+      "data_access": "none"
+    }
+  },
+  "usage_instructions": {
+    "quick_start": "在Claude对话中输入指令即可使用：例如 '查询Spark核心概念' 或 '查询Hadoop架构原理'",
+    "examples": [
+      {
+        "user_input": "查询Hadoop架构原理",
+        "plugin_response": "### Hadoop 架构原理\nHadoop 核心由 HDFS + YARN + MapReduce 三部分组成：\n1. **HDFS**：分布式文件系统，分 NameNode（管理元数据）、DataNode（存储数据块）；\n2. **YARN**：资源调度框架，负责集群资源的分配与管理；\n3. **MapReduce**：分布式计算框架，分Map（数据分片处理）、Reduce（结果聚合）阶段。"
+      }
+    ],
+    "limitations": "暂仅支持Hadoop/Spark/Flink等主流大数据技术栈的知识点查询，暂未覆盖小众技术内容。"
+  },
+  "privacy_policy": {
+    "url": "https://your-domain.com/privacy-policy.html",
+    "summary": "本插件仅处理大数据学习相关查询，不收集、存储任何用户隐私数据。"
+  }
+}
